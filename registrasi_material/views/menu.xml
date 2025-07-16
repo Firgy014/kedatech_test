@@ -1,0 +1,14 @@
+<odoo>
+
+    <data>
+
+        <menuitem id="material_registry_menu_root" name="Material Registry"/>
+
+        <menuitem id="menu_material_registry" 
+            name="Material Registry" 
+            parent="material_registry_menu_root"
+            action="material_registry_action"
+            sequence="1"/>
+    </data>
+
+</odoo>

@@ -1,0 +1,58 @@
+<odoo>
+    <data>
+
+        <record id="view_material_registry_filter" model="ir.ui.view">
+            <field name="name">material.registry.filter</field>
+            <field name="model">material.registry</field>
+            <field name="arch" type="xml">
+                <search>
+                    <filter string="Fabric" name="fabric" domain="[('material_type', '=', 'fabric')]"/>
+                    <filter string="Jeans" name="jeans" domain="[('material_type', '=', 'jeans')]"/>
+                    <filter string="Cotton" name="cotton" domain="[('material_type', '=', 'cotton')]"/>
+                    <group string="Material Type">
+                        <field name="material_type"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="view_tree_material_registry" model="ir.ui.view">
+            <field name="name">Material List Tree</field>
+            <field name="model">material.registry</field>
+            <field name="arch" type="xml">
+                <tree string="Material Registry">            
+                    <field name="code"/>
+                    <field name="name"/>
+                    <field name="material_type"/>
+                    <field name="buy_price"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_form_material_registry" model="ir.ui.view">
+            <field name="name">Material Form</field>
+            <field name="model">material.registry</field>
+            <field name="arch" type="xml">
+                <form string="Material Registry">
+                    <sheet>
+                        <group>
+                            <field name="code"/>
+                            <field name="name"/>
+                            <field name="material_type"/>
+                            <field name="buy_price"/>
+                            <field name="supplier_id"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="material_registry_action" model="ir.actions.act_window">
+            <field name="name">Material Registry</field>
+            <field name="res_model">material.registry</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    
+    </data>
+    
+</odoo>
